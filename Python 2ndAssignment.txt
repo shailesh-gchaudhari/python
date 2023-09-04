@@ -1,0 +1,163 @@
+      Python 2ndAssignment - String
+
+Q1) How we can store single quote (')  as string variable?
+Ans:-
+	-In Python, strings (str) can be created by enclosing text in single quotes ', double 
+quotes ", and triple quotes (''', """).
+-In a string enclosed with double quotes ", you can use single quotes ' directly. 
+However, double quotes " need to be escaped with a backslash, like this: \". 
+Writing \' for single quotes within the double-quoted string is also permissible, but 
+unnecessary.
+	s_sq = 'a\'b"c'
+	print(s_sq)
+	# a'b"c
+
+	s_sq = 'a\'b\"c'
+	print(s_sq)
+	# a'b"c
+-Since the difference is only in notation, the resulting values are equal in both cases.
+	s_sq = 'a\'b"c'
+	s_dq = "a'b\"c"
+
+ 	print(s_sq == s_dq)
+  	# True
+-An error will occur if you insert a newline directly into a string enclosed by single or double quotes. To 
+insert a newline, you need to use \n.
+	# s = 'abc
+	# xyz'
+	# SyntaxError: EOL while scanning string literal
+
+	s = 'abc\nxyz'
+	print(s)
+	# abc
+	# xyz
+-Within a string enclosed in triple quotes, line breaks can be directly included without any additional 
+escaping.
+	s_tq = '''abc
+	xyz'''
+
+	print(s_tq)
+	# abc
+	# xyz
+
+	print(type(s_tq))
+	# <class 'str'>
+
+Q2) . Refer the below variable:
+x = 'a'
+Here, is x a character type or string type variable? Support your answer 
+with an explanation.
+Ans:-
+In python this x is a string type variable because python does not have any charaachter data type 
+The value stored in x is single charechter or multiple character it's type is string 
+	
+Q3) Apply the following functions on this variable: 'Welcome to Python 
+foundation course'
+1)find()
+2)count()
+3)len()
+4)concatination
+Ans:-
+*Find() - 
+txt = "Hello, welcome to my world." 
+ 
+x = txt.find("welcome") 
+ 
+print(x)
+      o/p- 7
+The find() method finds the first occurrence of the specified value.
+The find() method returns -1 if the value is not found.
+The find() method is almost the same as the index() method, the only 
+difference is that the index() method raises an exception if the value is not 
+found.
+Syntax:- string.find(value, start, end)
+
+value	Required. The value to search for
+start	Optional. Where to start the search. Default is 0
+end	Optional. Where to end the search. Default is to the end of the string
+
+Q4) For the variable: word = 'PanaJi@12256' 
+Calculate the following:
+(a) Total number of alphabets in lowercase
+(b) Total number of alphabets in uppercase
+(c) Total number of numerical in string
+Ans:-
+a)-  string=input("Enter string:")
+count=0
+for i in string:
+      if(i.islower()):
+            count=count+1
+print("The number of lowercase characters is:")
+print(count)
+b)- string=input("Enter string:")
+count=0
+for i in string:
+      if(i.isupper()):
+            count=count+1
+print("The number of lowercase characters is:")
+print(count)
+c)- string=input("Enter string:")
+count=0
+for i in string:
+      if(i.isnumeric()):
+            count=count+1
+print("The number of lowercase characters is:")
+print(count)
+
+Q5) Write a code to store a numerical value inside a variable then convert it 
+into string
+Ans:-
+We can convert integer in to string by using str() function.
+But use of the str() is not the only way to do so. This type of conversion can also be done using the 
+"%s" keyword, the .format function or using f-string function.
+1)Using str() function-
+	num=10
+       print(type(num))
+       s=str(num)
+       print(type(s))
+       print(num)
+2) Using "%s" keyword- 
+       Syntax: "%s" % integer
+       num=10
+       print(type(num))
+       s="%s"%num
+       print(type(s))
+       print(num)
+3) Using .format() function-
+	Syntax: '{}'.format(integer)
+	num=10
+       print(type(num))
+       s="{}".format(num)
+       print(type(s))
+       print(num)
+4) Using f-string-
+	Syntax: f'{integer}'
+	num=10
+       print(type(num))
+       s=f'{num}'
+       print(type(s))
+       print(num)
+5) Using __str__() method-
+	Syntax:  Integer.__str__()
+	num=10
+       print(type(num))
+       s=num.__str__()
+       print(type(s))
+       print(num)
+       ***to convert string into int***
+6) Using str.isdigit()-
+	num="10"
+       print(type(num))
+       s=num.isdigit()
+       print(type(s))
+       print(num)
+7) Using join() method- 
+ 	join() method is used to convert a list of integers to a string. We convert the integer to a list 
+of characters using the list() function and then join them using the join() method.
+	
+num=[1,2,3,4,5,6,7,9]
+print("Type before conversion : ",type(num))
+converted_num = ''.join(list(str(num)))
+print("Type after conversion : ", type(converted_num))
+print(converted_num)
+
